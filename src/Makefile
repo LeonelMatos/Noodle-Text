@@ -4,10 +4,10 @@ OUTPUT = profile_output.txt
 .PHONY: run, rm, clean
 
 noodle.exe : main.c
-	$(CC) -o $@ $^ -Wall -std=c99 -Wextra -pedantic
+	@$(CC) -o $@ $^ -Wall -std=c99 -Wextra -pedantic
 
 run : noodle.exe
-	./$<
+	@./$<
 
 rm : 
 	@rm noodle.exe

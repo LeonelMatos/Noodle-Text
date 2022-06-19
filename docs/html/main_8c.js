@@ -1,4 +1,7 @@
 var main_8c =
 [
-    [ "main", "main_8c.html#a840291bc02cba5474a4cb46a9b9566fe", null ]
+    [ "disableRawMode", "main_8c.html#a511a801a5c76fb4cb8d534e810a2e37a", null ],
+    [ "enableRawMode", "main_8c.html#a7fecbf2dbe580e26a76bde506afe5555", null ],
+    [ "main", "main_8c.html#a840291bc02cba5474a4cb46a9b9566fe", null ],
+    [ "orig_termios", "main_8c.html#a1705dee0e4e822859804bec377506fb5", null ]
 ];
