@@ -7,8 +7,13 @@
 Noodle Text: the Kilo-like simple text editor with basic functions 
 and lightweight.
 
-This project was made in C using as a template the
-[antirez's kilo](http://antirez.com/news/108) text editor
+This project is made in C using as a template the
+[antirez's kilo](http://antirez.com/news/108) text editor.
+
+## Features
+
+Nothing yet, I've just started.
+Just give me some time.
 
 
 ## Authors
