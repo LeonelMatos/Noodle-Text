@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main_2',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]],
-  ['main_2ec_3',['main.c',['../main_8c.html',1,'']]]
+  ['kill_2',['kill',['../main_8c.html#a9a54f17884b9d094426279cc76bc67a5',1,'main.c']]]
 ];

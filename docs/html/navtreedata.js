@@ -23,6 +23,10 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "NoodleText", "index.html", [
+    [ "NoodleText: The Documentation", "index.html#autotoc_md0", [
+      [ "Introduction", "index.html#autotoc_md1", null ],
+      [ "TODO", "index.html#autotoc_md2", null ]
+    ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [
