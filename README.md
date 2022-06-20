@@ -4,7 +4,7 @@
 
 # NoodleText 🍜
 
-Noodle Text: the Kilo-like simple text editor with basic functions 
+NoodleText: the Kilo-like simple text editor with basic functions 
 and lightweight.
 
 This project is made in C using as a template the
