@@ -18,8 +18,7 @@ struct termios orig_termios;
 
 ///=die. Error handling function using unistd.h
 ///\arg \c (string) s: error id name
-void kill(const char *s)
-{
+void kill(const char *s) {
     perror(s);
     exit(1);
 }
@@ -53,6 +52,34 @@ void enableRawMode()
         kill("tcgetattr");
 }
 
+char editorReadKey()
+{
+    int nread;
+    char input;
+    while ((nread = read(STDIN_FILENO, &input, 1)) != 1)
+    {
+        if (nread == -1 && errno != EAGAIN)
+            kill("read");
+    }
+    return input;
+}
+
+
+/*---INPUT---*/
+
+void editorProcessKeypress()
+{
+    /// Input holder with stdin
+    char input = editorReadKey();
+
+    switch (input)
+    {
+        case CTRL_KEY('q'):
+            exit(0);
+            break;
+    }
+}
+
 
 /*---INIT---*/
 /// The Main function
@@ -60,19 +87,9 @@ int main(void)
 {
     enableRawMode();
 
-    while (1)
+    while (1) 
     {
-        /// Input holder with stdin
-        char input = '\0';
-
-        if (read(STDIN_FILENO, &input, 1) == -1 && errno != EAGAIN)
-            kill("read");
-        if (iscntrl(input))
-            printf("%d\r\n", input);
-        else
-            printf("%d ('%c')\r\n", input, input);
-        if (input == CTRL_KEY('q'))
-            break;
+        editorProcessKeypress();
     }
 
     printf("\n");
