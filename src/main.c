@@ -1,3 +1,4 @@
+/*---INCLUDE---*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -6,6 +7,8 @@
 #include <ctype.h>
 #include <errno.h>
 
+
+/*---DATA---*/
 // Placeholder for the terminal's default settings
 struct termios orig_termios;
 
@@ -17,6 +20,7 @@ void kill(const char *s)
     exit(1);
 }
 
+/*---TERMINAL OPTIONS---*/
 /// Resets the terminal's attributes with orig_termios
 void disableRawMode()
 {
@@ -44,6 +48,7 @@ void enableRawMode()
         kill("tcgetattr");
 }
 
+/*---INIT---*/
 /// The Main function
 int main(void)
 {
@@ -55,7 +60,7 @@ int main(void)
         char input = '\0';
 
         if (read(STDIN_FILENO, &input, 1) == -1 && errno != EAGAIN)
-        kill("read");
+            kill("read");
         if (iscntrl(input))
             printf("%d\r\n", input);
         else
