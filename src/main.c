@@ -8,6 +8,10 @@
 #include <errno.h>
 
 
+/*---DEFINES---*/
+#define CTRL_KEY(k) ((k) & 0x1f)
+
+
 /*---DATA---*/
 // Placeholder for the terminal's default settings
 struct termios orig_termios;
@@ -19,6 +23,7 @@ void kill(const char *s)
     perror(s);
     exit(1);
 }
+
 
 /*---TERMINAL OPTIONS---*/
 /// Resets the terminal's attributes with orig_termios
@@ -48,6 +53,7 @@ void enableRawMode()
         kill("tcgetattr");
 }
 
+
 /*---INIT---*/
 /// The Main function
 int main(void)
@@ -65,7 +71,7 @@ int main(void)
             printf("%d\r\n", input);
         else
             printf("%d ('%c')\r\n", input, input);
-        if (input == 'q')
+        if (input == CTRL_KEY('q'))
             break;
     }
 
