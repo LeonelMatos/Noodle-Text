@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['main_3',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]],
-  ['main_2ec_4',['main.c',['../main_8c.html',1,'']]],
-  ['mainpage_2emd_5',['mainpage.md',['../mainpage_8md.html',1,'']]]
+  ['kill_6',['kill',['../main_8c.html#a9a54f17884b9d094426279cc76bc67a5',1,'main.c']]]
 ];

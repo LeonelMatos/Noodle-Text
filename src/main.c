@@ -19,6 +19,9 @@ struct termios orig_termios;
 ///=die. Error handling function using unistd.h
 ///\arg \c (string) s: error id name
 void kill(const char *s) {
+    write(STDOUT_FILENO, "\x1b[2J", 4);
+    write(STDOUT_FILENO, "\x1b[H", 3);
+
     perror(s);
     exit(1);
 }
@@ -52,6 +55,8 @@ void enableRawMode()
         kill("tcgetattr");
 }
 
+/// Handles the reading of STDIN and stores a char at a time in input.
+/// \return \c(char) input: key input from STDIN
 char editorReadKey()
 {
     int nread;
@@ -64,9 +69,22 @@ char editorReadKey()
     return input;
 }
 
+/*---OUTPUT---*/
+
+///Clears the screen of the editor
+void editorRefreshScreen()
+{
+    write(STDOUT_FILENO, "\x1b[2J", 4);
+    write(STDOUT_FILENO, "\x1b[H", 3);
+}
+
+
 
 /*---INPUT---*/
 
+/// Processes the result/command of each key
+/// Calls the \c editorReadKey() function to receive
+///the user's input
 void editorProcessKeypress()
 {
     /// Input holder with stdin
@@ -75,6 +93,8 @@ void editorProcessKeypress()
     switch (input)
     {
         case CTRL_KEY('q'):
+            write(STDOUT_FILENO, "\x1b[2J", 4);
+            write(STDOUT_FILENO, "\x1b[H", 3);
             exit(0);
             break;
     }
@@ -82,6 +102,7 @@ void editorProcessKeypress()
 
 
 /*---INIT---*/
+
 /// The Main function
 int main(void)
 {
@@ -89,6 +110,7 @@ int main(void)
 
     while (1) 
     {
+        editorRefreshScreen();
         editorProcessKeypress();
     }
 
