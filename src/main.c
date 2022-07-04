@@ -8,6 +8,8 @@
 #include <ctype.h>
 #include <errno.h>
 
+#include "args.h"
+
 /*---DEFINES---*/
 
 /// Value that represents the CTRL key
@@ -136,9 +138,14 @@ void editorProcessKeypress()
 
 /*---INIT---*/
 
-/// The Main function
-int main(void)
+/// The Main function.
+///\arg Receives arguments when called, used as options
+int main(int argc, char *argv[])
 {
+    if (argc != 1) {
+        if (args_check (argv[1]) == -1) return 0;
+    }
+
     enableRawMode();
 
     while (1)

@@ -1,17 +1,22 @@
 CC = gcc # C Compiler
 OUTPUT = profile_output.txt
+SOURCEFILES = $(wildcard *.c)
+OBJECTS = $(SOURCEFILES:%.c=%.o)
 
-.PHONY: run, rm, clean
+.PHONY: run, rm, clean, help
 
-noodle.exe : main.c
+noodle : $(OBJECTS)
 	@$(CC) -o $@ $^ -Wall -Wextra -pedantic -std=c99
 
-run : noodle.exe
+%.o : %.c
+	@$(CC) -c $< -Wall -Wextra -pedantic -std=c99
+
+run : noodle
 	@./$<
 
 rm : 
-	@rm noodle.exe
-	@echo "Removed noodle.exe"
+	@rm noodle
+	@echo "Removed noodle"
 
 clean : # Clean all object .o files 
 	@rm *.out
@@ -24,3 +29,11 @@ a.out : main.c
 profile : a.out # Uses gprof to profile the code 
 	./$<
 	gprof $< gmon.out > $(OUTPUT)
+
+help : 
+	@echo "NoodleText Makefile helper:"
+	@echo "'run'     : compiles and executes the program;"
+	@echo "'rm'      : removes the compiled program;"
+	@echo "'clean'   : clears any auxiliary file such as .out or .txt;"
+	@echo "'profile' : creates a .txt output file with results from profiling the program;"
+	@echo "'help'    : I'll leave you at that one."

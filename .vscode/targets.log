@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun 20 19:45:49 2022
+# Make data base, printed on Mon Jul  4 22:48:53 2022
 
 # Variables
 
@@ -51,7 +53,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:45983
+JOURNAL_STREAM = 8:43255
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile
@@ -73,7 +75,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 LC_CTYPE = pt_PT.UTF-8
 # environment
-MANAGERPID = 1022
+MANAGERPID = 990
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -89,7 +91,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/HEAVENSDOOR:@/tmp/.ICE-unix/1391,unix/HEAVENSDOOR:/tmp/.ICE-unix/1391
+SESSION_MANAGER = local/HEAVENSDOOR:@/tmp/.ICE-unix/1350,unix/HEAVENSDOOR:/tmp/.ICE-unix/1350
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -99,7 +101,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 3cad8f60890a46608c6360095debaa12
+INVOCATION_ID = 938abc49e48d461b95be7edc5289f3d5
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -109,7 +111,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2459
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2808
 # automatic
 %F = $(notdir $%)
 # environment
@@ -121,7 +123,7 @@ PWD = /home/leonel/NoodleText
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1317
+SSH_AGENT_PID = 1269
 # environment
 PKG_CONFIG_PATH = /home/leonel/.opam/default/lib/pkgconfig:/home/leonel/.opam/default/lib/pkgconfig:
 # environment
@@ -141,7 +143,7 @@ VSCODE_CODE_CACHE_PATH = /home/leonel/.config/Code/CachedData/30d9c6cd9483b2cc58
 # environment
 LOGNAME = leonel
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 +F = $(notdir $+)
 # environment
@@ -163,7 +165,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-68f85f57-1ae1-4078-9785-3fb67e832204.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-fa1344c7-aca6-4676-af33-e41e989880ef.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -233,7 +235,7 @@ LC_ADDRESS = pt_PT.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2459
+VSCODE_PID = 2808
 # variable set hash-table stats:
 # Load=112/1024=11%, Rehash=0, Collisions=20/134=15%
 
@@ -280,14 +282,12 @@ makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 # Not a target:
 GNUmakefile:
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
- 
-make: *** No rule to make target 'all'.  Stop.
-
 #  Failed to be updated.
 
 # files hash-table stats:
@@ -304,6 +304,6 @@ make: *** No rule to make target 'all'.  Stop.
 # strcache performance: lookups = 20 / hit rate = 15%
 # hash-table stats:
 # Load=17/8192=0%, Rehash=0, Collisions=1/20=5%
-# Finished Make data base on Mon Jun 20 19:45:49 2022
+# Finished Make data base on Mon Jul  4 22:48:53 2022
 
  
