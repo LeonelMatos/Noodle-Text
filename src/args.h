@@ -1,1 +1,0 @@
-int args_check (char * arg);
