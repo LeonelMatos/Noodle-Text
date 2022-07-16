@@ -1,6 +1,0 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory '/home/leonel/NoodleText'
-make: Leaving directory '/home/leonel/NoodleText'
- 
-make: *** No targets specified and no makefile found.  Stop.
-
