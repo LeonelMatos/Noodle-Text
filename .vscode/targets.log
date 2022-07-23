@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jul  4 22:48:53 2022
+# Make data base, printed on Sat Jul 23 21:29:29 2022
 
 # Variables
 
@@ -30,8 +30,6 @@ OCAML_TOPLEVEL_PATH = /home/leonel/.opam/default/lib/toplevel
 XDG_SESSION_CLASS = user
 # environment
 XDG_SESSION_TYPE = x11
-# environment
-VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
@@ -53,7 +51,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:43255
+JOURNAL_STREAM = 8:43740
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile
@@ -71,11 +69,9 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/d
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
-VSCODE_VERBOSE_LOGGING = true
-# environment
 LC_CTYPE = pt_PT.UTF-8
 # environment
-MANAGERPID = 990
+MANAGERPID = 1041
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -91,17 +87,15 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/HEAVENSDOOR:@/tmp/.ICE-unix/1350,unix/HEAVENSDOOR:/tmp/.ICE-unix/1350
+SESSION_MANAGER = local/HEAVENSDOOR:@/tmp/.ICE-unix/1402,unix/HEAVENSDOOR:/tmp/.ICE-unix/1402
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
-VSCODE_LOG_STACK = false
-# environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 938abc49e48d461b95be7edc5289f3d5
+INVOCATION_ID = c8bfc8a1064e4921a1112fd5a8b63039
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -111,19 +105,17 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2808
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3733
 # automatic
 %F = $(notdir $%)
 # environment
 DISPLAY = :0
 # environment
-VSCODE_PIPE_LOGGING = true
-# environment
 PWD = /home/leonel/NoodleText
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1269
+SSH_AGENT_PID = 1322
 # environment
 PKG_CONFIG_PATH = /home/leonel/.opam/default/lib/pkgconfig:/home/leonel/.opam/default/lib/pkgconfig:
 # environment
@@ -139,7 +131,7 @@ HOME = /home/leonel
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
-VSCODE_CODE_CACHE_PATH = /home/leonel/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
+VSCODE_CODE_CACHE_PATH = /home/leonel/.config/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
 # environment
 LOGNAME = leonel
 # environment
@@ -164,8 +156,6 @@ QT_IM_MODULE = ibus
 SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
-# environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-fa1344c7-aca6-4676-af33-e41e989880ef.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -189,7 +179,7 @@ MAKE_COMMAND := make
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-3068354d-1.68.1-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-3068354d-1.69.2-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -235,9 +225,9 @@ LC_ADDRESS = pt_PT.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2808
+VSCODE_PID = 3733
 # variable set hash-table stats:
-# Load=112/1024=11%, Rehash=0, Collisions=20/134=15%
+# Load=107/1024=10%, Rehash=0, Collisions=19/129=15%
 
 # Pattern-specific Variable Values
 
@@ -282,7 +272,6 @@ makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 # Not a target:
 GNUmakefile:
 #  Implicit rule search has been done.
@@ -298,12 +287,13 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
+ 
 # strcache buffers: 1 (0) / strings = 17 / storage = 139 B / avg = 8 B
 # current buf: size = 8162 B / used = 139 B / count = 17 / avg = 8 B
 
 # strcache performance: lookups = 20 / hit rate = 15%
 # hash-table stats:
 # Load=17/8192=0%, Rehash=0, Collisions=1/20=5%
-# Finished Make data base on Mon Jul  4 22:48:53 2022
+# Finished Make data base on Sat Jul 23 21:29:29 2022
 
  
