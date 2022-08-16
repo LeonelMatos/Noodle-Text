@@ -39,4 +39,5 @@ help :
 	@echo "'rm'      : removes the compiled program;"
 	@echo "'clean'   : clears any auxiliary file such as .out or .txt;"
 	@echo "'profile' : creates a .txt output file with results from profiling the program;"
-	@echo "'help'    : I'll leave you at that one."
+	@echo "'build'   : compile and install the program;"
+@echo "'help'    : I'll leave you at that one."
