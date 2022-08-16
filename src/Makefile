@@ -30,6 +30,9 @@ profile : a.out # Uses gprof to profile the code
 	./$<
 	gprof $< gmon.out > $(OUTPUT)
 
+build : noodle
+	@sudo mv noodle /usr/bin
+
 help : 
 	@echo "NoodleText Makefile helper:"
 	@echo "'run'     : compiles and executes the program;"
