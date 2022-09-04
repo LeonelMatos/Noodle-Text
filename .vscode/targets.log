@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug  5 17:32:33 2022
+# Make data base, printed on Sun Sep  4 15:47:09 2022
 
 # Variables
 
@@ -51,11 +49,11 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/d
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/leonel/.config/Code/CachedData/da76f93349a72022ca4670c1b84860304616aaa2
+VSCODE_CODE_CACHE_PATH = /home/leonel/.config/Code/CachedData/e4503b30fc78200f846c62cf8091b76ff5547662
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.DJ7IQ1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.2EMTR1
 # default
 .LOADED := 
 # default
@@ -89,13 +87,13 @@ MAKEFILE_LIST :=
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 6159
+VSCODE_PID = 3846
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/HeavensDoor:@/tmp/.ICE-unix/1862,unix/HeavensDoor:/tmp/.ICE-unix/1862
+SESSION_MANAGER = local/HeavensDoor:@/tmp/.ICE-unix/1841,unix/HeavensDoor:/tmp/.ICE-unix/1841
 # automatic
 *F = $(notdir $*)
 # environment
@@ -137,7 +135,7 @@ LC_MONETARY = pt_PT.UTF-8
 # environment
 LC_TIME = pt_PT.UTF-8
 # environment
-INVOCATION_ID = ab28469508e44bb6a64ee905eae7dc69
+INVOCATION_ID = c0f34e0bc0a1448cb7f3cfa277c92420
 # environment
 USERNAME = leonel
 # environment
@@ -167,7 +165,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 1881
+SYSTEMD_EXEC_PID = 1877
 # environment
 DISPLAY = :0
 # environment
@@ -177,11 +175,11 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1679
+MANAGERPID = 1643
 # environment
 LC_MEASUREMENT = pt_PT.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 6159
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3846
 # environment
 _ = /usr/share/code/code
 # environment
@@ -191,7 +189,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # environment
 LC_CTYPE = pt_PT.UTF-8
 # environment
-JOURNAL_STREAM = 8:32458
+JOURNAL_STREAM = 8:29274
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -203,7 +201,7 @@ QT_IM_MODULE = ibus
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-3068354d-1.70.0-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-3068354d-1.70.2-main.sock
 # environment
 IM_CONFIG_PHASE = 1
 # default
@@ -282,12 +280,14 @@ GNUmakefile:
 # No general ('VPATH' variable) search path.
 
 # strcache buffers: 1 (0) / strings = 17 / storage = 139 B / avg = 8 B
- 
 # current buf: size = 8162 B / used = 139 B / count = 17 / avg = 8 B
 
 # strcache performance: lookups = 20 / hit rate = 15%
 # hash-table stats:
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 # Load=17/8192=0%, Rehash=0, Collisions=0/20=0%
-# Finished Make data base on Fri Aug  5 17:32:33 2022
+# Finished Make data base on Sun Sep  4 15:47:09 2022
 
  

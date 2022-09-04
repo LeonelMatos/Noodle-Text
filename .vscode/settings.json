@@ -5,5 +5,9 @@
         "stdlib.h": "c",
         "ctype.h": "c",
         "errno.h": "c"
-    }
+    },
+    "cSpell.words": [
+        "screencols",
+        "screenrows"
+    ]
 }

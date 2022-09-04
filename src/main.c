@@ -19,6 +19,8 @@
 
 struct editorConfig
 {
+    int screenrows;
+    int screencols;
     // Placeholder for the terminal's default settings
     struct termios orig_termios;
 
@@ -78,18 +80,36 @@ char editorReadKey()
     return input;
 }
 
+int getCursorPosition (int *rows, int *cols) {
+    char buf[32];
+    unsigned int i = 0;
+
+    if (write(STDOUT_FILENO, "\x1b[6n", 4) != 4) return -1;
+
+    while (i < sizeof(buf) - 1) {
+        if (read(STDIN_FILENO, &buf[i], 1) != 1) break;
+        if (buf[i] == 'R') break;
+        i++;
+    }
+    buf[i] = '\0';
+
+    if (buf[0] != '\x1b' || buf[1] != '[') return -1;
+    if (sscanf(&buf[2], "%d;%d", rows, cols) != 2) return -1;
+
+    return 0;
+}
+
 ///Gives the size of the terminal \arg (*int) rows: window rows
 ///\arg (*int) cols: window collumns
 int getWindowSize(int *rows, int *cols)
 {
     struct winsize ws;
 
-    if (1 || ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws) == -1 || ws.ws_col == 0)
+    if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws) == -1 || ws.ws_col == 0)
     {
         //Moves the cursor forward/down to the down-right corner of the terminal
         if (write(STDOUT_FILENO, "\x1b[999C\x1b[999B", 12) != 12) return -1;
-        editorReadKey();
-        return -1;
+        return getCursorPosition(rows, cols);
     }
     else {
         *cols = ws.ws_col;
@@ -106,8 +126,8 @@ void editorDrawRows()
 {
     /// Number of rows to draw
     int y;
-    for (y = 0; y < 24; y++)
-        write(STDOUT_FILENO, ".\r\n", 3);
+    for (y = 0; y < E.screenrows; y++)
+        write(STDOUT_FILENO, "-\r\n", 3);
 }
 
 /// Clears the screen of the editor
@@ -143,15 +163,22 @@ void editorProcessKeypress()
 
 /*---INIT---*/
 
+/// Initialize all the fields in the E struct after enabling raw mode in the editor
+void initEditor() {
+    if (getWindowSize(&E.screenrows, &E.screencols) == -1) kill("getWindowSize");
+}
+
 /// The Main function.
 ///\arg Receives arguments when called, used as options
 int main(int argc, char *argv[])
 {
+    //Check arguments for extra options
     if (argc != 1) {
         if (args_check (argv[1]) == -1) return 0;
     }
 
     enableRawMode();
+    initEditor();
 
     while (1)
     {
