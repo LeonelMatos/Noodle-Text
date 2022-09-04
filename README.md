@@ -21,5 +21,5 @@ Just give me some time.
 
 ## Authors ✒️
 
-- [@LeonelMatos](https://www.github.com/LeonelMatos)
+- [LeonelMatos](https://www.github.com/LeonelMatos)
 
