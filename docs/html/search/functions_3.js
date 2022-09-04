@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_20',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]]
+  ['getcursorposition_35',['getCursorPosition',['../main_8c.html#a485c870734764c8e5acce9e16e4d70ac',1,'main.c']]],
+  ['getwindowsize_36',['getWindowSize',['../main_8c.html#aeb7a921b1f250259a639fe7b24166021',1,'main.c']]]
 ];

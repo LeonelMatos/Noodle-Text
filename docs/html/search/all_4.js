@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['main_7',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]],
-  ['main_2ec_8',['main.c',['../main_8c.html',1,'']]],
-  ['mainpage_2emd_9',['mainpage.md',['../mainpage_8md.html',1,'']]]
+  ['getcursorposition_12',['getCursorPosition',['../main_8c.html#a485c870734764c8e5acce9e16e4d70ac',1,'main.c']]],
+  ['getwindowsize_13',['getWindowSize',['../main_8c.html#aeb7a921b1f250259a639fe7b24166021',1,'main.c']]]
 ];
