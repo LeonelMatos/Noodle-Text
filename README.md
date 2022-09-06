@@ -19,6 +19,11 @@ Just give me some time.
 (ಥ _ ಥ)
 
 
+## Documentation 📖
+
+[NoodleText's Documentation](https://leonelmatos.github.io/NoodleText/)
+
+
 ## Authors ✒️
 
 - [LeonelMatos](https://www.github.com/LeonelMatos)
