@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['editorconfig_23',['editorConfig',['../structeditorConfig.html',1,'']]]
+  ['editorconfig_27',['editorConfig',['../structeditorConfig.html',1,'']]]
 ];
