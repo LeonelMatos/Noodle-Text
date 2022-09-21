@@ -1,2 +1,4 @@
 ./.vscode/
 *.log
+.vscode/targets.log
+.vscode/drylog.log
