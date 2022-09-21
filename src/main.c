@@ -1,6 +1,7 @@
 /*---INCLUDE---*/
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
 #include <termios.h>
@@ -28,7 +29,7 @@ struct editorConfig
 
 struct editorConfig E;
 
-///=die. Error handling function using unistd.h \arg \c (string) s: error id name
+///=die. Error handling function using unistd.h \arg (string) s: error id name
 void kill(const char *s)
 {
     write(STDOUT_FILENO, "\x1b[2J", 4);
@@ -119,6 +120,43 @@ int getWindowSize(int *rows, int *cols)
 }
 
 /*---APPEND_BUFFER---*/
+
+//Definitions
+/// Append buffer: dynamic string type struct.
+struct abuf {
+    /// Char pointer to the buffer in memory with length 
+    char *b;
+    /// int length value of the buffer
+    int len;
+};
+
+/// Represents an empty buffer, used as a constructor
+///for the abuf type struct
+#define ABUF_INIT {NULL, 0}
+
+//Functions
+
+/// Appends a string \arg s to the a given \arg abuf struct 
+///with a \arg len size by allocating enough memory for \c s
+void abAppend (struct abuf *ab, const char *s, int len)
+{
+    char *new = realloc (ab->b, ab->len + len);
+
+    if (new == NULL) return;
+
+    memcpy(&new[ab->len], s, len);
+    ab->b = new;
+    ab->len += len;
+
+}
+
+/// Deallocates the dynamic memory used by the given \arg ab abuf struct
+void abFree (struct abuf *ab)
+{
+    free(ab->b);
+
+}
+
 
 /*---OUTPUT---*/
 
