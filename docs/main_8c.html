@@ -95,6 +95,7 @@ $(document).ready(function(){initNavTree('main_8c.html',''); initResizable(); })
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &lt;sys/ioctl.h&gt;</code><br />
 <code>#include &lt;termios.h&gt;</code><br />
@@ -112,12 +113,17 @@ Include dependency graph for main.c:</div>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeditorConfig.html">editorConfig</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structabuf.html">abuf</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append buffer: dynamic string type struct.  <a href="structabuf.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a6ad38d024c3548be5f50d7fc0679664a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a6ad38d024c3548be5f50d7fc0679664a">CTRL_KEY</a>(k)&#160;&#160;&#160;((k)&amp;0x1f)</td></tr>
 <tr class="memdesc:a6ad38d024c3548be5f50d7fc0679664a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value that represents the CTRL key.  <a href="main_8c.html#a6ad38d024c3548be5f50d7fc0679664a">More...</a><br /></td></tr>
 <tr class="separator:a6ad38d024c3548be5f50d7fc0679664a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a338375e0d9379e2c297acac89c4049e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a338375e0d9379e2c297acac89c4049e7">ABUF_INIT</a>&#160;&#160;&#160;{NULL, 0}</td></tr>
+<tr class="separator:a338375e0d9379e2c297acac89c4049e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -136,6 +142,11 @@ Functions</h2></td></tr>
 <tr class="separator:a485c870734764c8e5acce9e16e4d70ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb7a921b1f250259a639fe7b24166021"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aeb7a921b1f250259a639fe7b24166021">getWindowSize</a> (int *rows, int *cols)</td></tr>
 <tr class="separator:aeb7a921b1f250259a639fe7b24166021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dd3715258f4c42aeb40ae92f51422e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a9dd3715258f4c42aeb40ae92f51422e9">abAppend</a> (struct <a class="el" href="structabuf.html">abuf</a> *ab, const char *s, int len)</td></tr>
+<tr class="separator:a9dd3715258f4c42aeb40ae92f51422e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa676d43ad5c715bcf8ec2c3b2df0f4e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aa676d43ad5c715bcf8ec2c3b2df0f4e0">abFree</a> (struct <a class="el" href="structabuf.html">abuf</a> *ab)</td></tr>
+<tr class="memdesc:aa676d43ad5c715bcf8ec2c3b2df0f4e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deallocates the dynamic memory used by the given.  <a href="main_8c.html#aa676d43ad5c715bcf8ec2c3b2df0f4e0">More...</a><br /></td></tr>
+<tr class="separator:aa676d43ad5c715bcf8ec2c3b2df0f4e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a884c4e88bd00bc7b775031fd3b11e850"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a884c4e88bd00bc7b775031fd3b11e850">editorDrawRows</a> ()</td></tr>
 <tr class="memdesc:a884c4e88bd00bc7b775031fd3b11e850"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the rows on the side of the editor.  <a href="main_8c.html#a884c4e88bd00bc7b775031fd3b11e850">More...</a><br /></td></tr>
 <tr class="separator:a884c4e88bd00bc7b775031fd3b11e850"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,6 +167,21 @@ Variables</h2></td></tr>
 <tr class="separator:a2102c449d589a72385cc03ed8906854f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a338375e0d9379e2c297acac89c4049e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a338375e0d9379e2c297acac89c4049e7">&#9670;&nbsp;</a></span>ABUF_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ABUF_INIT&#160;&#160;&#160;{NULL, 0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Represents an empty buffer, used as a constructor for the abuf type struct </p>
+
+</div>
+</div>
 <a id="a6ad38d024c3548be5f50d7fc0679664a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6ad38d024c3548be5f50d7fc0679664a">&#9670;&nbsp;</a></span>CTRL_KEY</h2>
 
@@ -177,6 +203,68 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a9dd3715258f4c42aeb40ae92f51422e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dd3715258f4c42aeb40ae92f51422e9">&#9670;&nbsp;</a></span>abAppend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void abAppend </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structabuf.html">abuf</a> *&#160;</td>
+          <td class="paramname"><em>ab</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Appends a string </p><ul>
+<li>s to the a given </li>
+<li>abuf struct with a </li>
+<li>len size by allocating enough memory for <code>s</code> </li>
+</ul>
+
+</div>
+</div>
+<a id="aa676d43ad5c715bcf8ec2c3b2df0f4e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa676d43ad5c715bcf8ec2c3b2df0f4e0">&#9670;&nbsp;</a></span>abFree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void abFree </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structabuf.html">abuf</a> *&#160;</td>
+          <td class="paramname"><em>ab</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deallocates the dynamic memory used by the given. </p>
+<ul>
+<li>ab abuf struct </li>
+</ul>
+
+</div>
+</div>
 <a id="a511a801a5c76fb4cb8d534e810a2e37a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a511a801a5c76fb4cb8d534e810a2e37a">&#9670;&nbsp;</a></span>disableRawMode()</h2>
 
@@ -388,7 +476,7 @@ Variables</h2></td></tr>
 
 <p>=die. Error handling function using unistd.h </p>
 <ul>
-<li><code></code>(string) s: error id name </li>
+<li>(string) s: error id name </li>
 </ul>
 
 </div>

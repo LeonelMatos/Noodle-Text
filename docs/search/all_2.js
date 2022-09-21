@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ctrl_5fkey_5',['CTRL_KEY',['../main_8c.html#a6ad38d024c3548be5f50d7fc0679664a',1,'main.c']]]
+  ['b_9',['b',['../structabuf.html#a690e249d33c22d13e122d06d3466378b',1,'abuf']]]
 ];

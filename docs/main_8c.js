@@ -1,7 +1,11 @@
 var main_8c =
 [
     [ "editorConfig", "structeditorConfig.html", "structeditorConfig" ],
+    [ "abuf", "structabuf.html", "structabuf" ],
+    [ "ABUF_INIT", "main_8c.html#a338375e0d9379e2c297acac89c4049e7", null ],
     [ "CTRL_KEY", "main_8c.html#a6ad38d024c3548be5f50d7fc0679664a", null ],
+    [ "abAppend", "main_8c.html#a9dd3715258f4c42aeb40ae92f51422e9", null ],
+    [ "abFree", "main_8c.html#aa676d43ad5c715bcf8ec2c3b2df0f4e0", null ],
     [ "disableRawMode", "main_8c.html#a511a801a5c76fb4cb8d534e810a2e37a", null ],
     [ "editorDrawRows", "main_8c.html#a884c4e88bd00bc7b775031fd3b11e850", null ],
     [ "editorProcessKeypress", "main_8c.html#a43bfd581a44ca5cb90567f87fd54c2e6", null ],

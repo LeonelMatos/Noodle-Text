@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['orig_5ftermios_23',['orig_termios',['../structeditorConfig.html#a23fc1bfe10a36db422d39e1c64ad354e',1,'editorConfig']]]
+  ['main_24',['main',['../main_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.c']]],
+  ['main_2ec_25',['main.c',['../main_8c.html',1,'']]],
+  ['mainpage_2emd_26',['mainpage.md',['../mainpage_8md.html',1,'']]],
+  ['makefile_2emd_27',['makefile.md',['../makefile_8md.html',1,'']]]
 ];

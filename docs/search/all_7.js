@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kill_17',['kill',['../main_8c.html#a9a54f17884b9d094426279cc76bc67a5',1,'main.c']]]
+  ['initeditor_21',['initEditor',['../main_8c.html#a5593979af366e0639f9179bcb304470a',1,'main.c']]]
 ];
