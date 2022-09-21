@@ -155,7 +155,7 @@ void abFree (struct abuf *ab)
 {
     free(ab->b);
 
-}
+}//Last thing done as of ->
 
 
 /*---OUTPUT---*/
