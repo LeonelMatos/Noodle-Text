@@ -168,10 +168,10 @@ void editorDrawRows(struct abuf *ab)
     /// Number of rows to draw
     int y;
     for (y = 0; y < E.screenrows; y++) {
-        if (y == E.screenrows / 3)
+        if (y == E.screenrows / E.screenrows)
         {
             char welcome[80];
-            int welcome_len = snprintf(welcome, sizeof(welcome), "NoodleText || version %s", NOODLE_VERSION);
+            int welcome_len = snprintf(welcome, sizeof(welcome), "<< NoodleText || version %s >>", NOODLE_VERSION);
 
             if (welcome_len > E.screencols) welcome_len = E.screencols;
 
@@ -181,7 +181,7 @@ void editorDrawRows(struct abuf *ab)
                 abAppend(ab, "*", 1);
                 padding--;
             }
-            while (padding--){ abAppend(ab, " ", 1);}
+            while (padding--) abAppend(ab, " ", 1);
 
             abAppend(ab, welcome, welcome_len);
         }
@@ -189,7 +189,7 @@ void editorDrawRows(struct abuf *ab)
             abAppend(ab, "*", 1);
         }
 
-        abAppend(ab, "*", 1);
+        //abAppend(ab, "*", 1);
 
         abAppend(ab, "\x1b[K", 3);
 
