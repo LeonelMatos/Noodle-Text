@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['screencols_30',['screencols',['../structeditorConfig.html#add2abe72c5a79e1a970e9307d3766771',1,'editorConfig']]],
-  ['screenrows_31',['screenrows',['../structeditorConfig.html#abd11781d9fa965c2a42f3be434a93a9a',1,'editorConfig']]]
+  ['orig_5ftermios_41',['orig_termios',['../structeditorConfig.html#a23fc1bfe10a36db422d39e1c64ad354e',1,'editorConfig']]]
 ];

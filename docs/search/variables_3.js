@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['orig_5ftermios_58',['orig_termios',['../structeditorConfig.html#a23fc1bfe10a36db422d39e1c64ad354e',1,'editorConfig']]]
+  ['len_74',['len',['../structabuf.html#a748e008a610fd3a64b17be2316920836',1,'abuf']]]
 ];
