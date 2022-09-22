@@ -215,10 +215,7 @@ struct abuf
 
 /// Represents an empty buffer, used as a constructor
 /// for the abuf type struct
-#define ABUF_INIT \
-    {             \
-        NULL, 0   \
-    }
+#define ABUF_INIT {NULL, 0}
 
 // Functions
 
