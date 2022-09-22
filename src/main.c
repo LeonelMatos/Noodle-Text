@@ -155,21 +155,21 @@ void abFree (struct abuf *ab)
 {
     free(ab->b);
 
-}//Last thing done as of ->
+}
 
 
 /*---OUTPUT---*/
 
 /// Draws the rows on the side of the editor
-void editorDrawRows()
+void editorDrawRows(struct abuf *ab)
 {
     /// Number of rows to draw
     int y;
     for (y = 0; y < E.screenrows; y++) {
-        write(STDOUT_FILENO, "-", 1);
+        abAppend(ab, "~", 1);
 
         if (y < E.screenrows - 1)
-            write(STDOUT_FILENO, "\r\n", 2);
+            abAppend(ab, "\r\n", 2);
 
     }
 }
@@ -177,12 +177,20 @@ void editorDrawRows()
 /// Clears the screen of the editor
 void editorRefreshScreen()
 {
-    write(STDOUT_FILENO, "\x1b[2J", 4);
-    write(STDOUT_FILENO, "\x1b[H", 3);
+    struct abuf ab = ABUF_INIT; // Creates the abuf buffer with INIT
+    // Instead of always using write(STDOUT_FILENO,...), the abAppend(...) will
+    // gather the text and write it all at once
 
-    editorDrawRows();
+    abAppend(&ab, "\x1b[2J", 4); // Adds the string to the buffer
+    abAppend(&ab, "\x1b[H", 3);
 
-    write(STDOUT_FILENO, "\x1b[H", 3);
+    editorDrawRows(&ab);
+
+    abAppend(&ab, "\x1b[H", 3);
+
+    write(STDOUT_FILENO, ab.b, ab.len); // Writes out all the accumulated strings
+
+    abFree(&ab); // After writing, frees the allocated memory
 }
 
 /*---INPUT---*/
