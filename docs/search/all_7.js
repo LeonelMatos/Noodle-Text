@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['home_5fkey_31',['HOME_KEY',['../main_8c.html#afc98e1836253d54640dce00e325aa284adbfee56bbc71c97e2ed80ba44706581b',1,'main.c']]]
+  ['getcursorposition_36',['getCursorPosition',['../main_8c.html#a485c870734764c8e5acce9e16e4d70ac',1,'main.c']]],
+  ['getwindowsize_37',['getWindowSize',['../main_8c.html#aeb7a921b1f250259a639fe7b24166021',1,'main.c']]]
 ];

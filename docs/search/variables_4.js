@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['orig_5ftermios_75',['orig_termios',['../structeditorConfig.html#a23fc1bfe10a36db422d39e1c64ad354e',1,'editorConfig']]]
+  ['numrows_89',['numrows',['../structeditorConfig.html#a549191ab239ae52b8a9413045580abef',1,'editorConfig']]]
 ];

@@ -87,9 +87,7 @@ $(document).ready(function(){initNavTree('main_8c.html',''); initResizable(); })
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">main.c File Reference</div>  </div>
 </div><!--header-->
@@ -99,6 +97,7 @@ $(document).ready(function(){initNavTree('main_8c.html',''); initResizable(); })
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &lt;sys/ioctl.h&gt;</code><br />
+<code>#include &lt;sys/types.h&gt;</code><br />
 <code>#include &lt;termios.h&gt;</code><br />
 <code>#include &lt;ctype.h&gt;</code><br />
 <code>#include &lt;errno.h&gt;</code><br />
@@ -112,6 +111,8 @@ Include dependency graph for main.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerow.html">erow</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeditorConfig.html">editorConfig</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structabuf.html">abuf</a></td></tr>
@@ -120,13 +121,17 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:a8fb447618db946a9e2a596d9ea18763f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a8fb447618db946a9e2a596d9ea18763f">_DEFAULT_SOURCE</a></td></tr>
+<tr class="separator:a8fb447618db946a9e2a596d9ea18763f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3d8a3bd0c0b677acef144f2c2ef6d73"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ad3d8a3bd0c0b677acef144f2c2ef6d73">_BSD_SOURCE</a></td></tr>
+<tr class="separator:ad3d8a3bd0c0b677acef144f2c2ef6d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a369266c24eacffb87046522897a570d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a369266c24eacffb87046522897a570d5">_GNU_SOURCE</a></td></tr>
+<tr class="separator:a369266c24eacffb87046522897a570d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ad38d024c3548be5f50d7fc0679664a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a6ad38d024c3548be5f50d7fc0679664a">CTRL_KEY</a>(k)&#160;&#160;&#160;((k)&amp;0x1f)</td></tr>
 <tr class="memdesc:a6ad38d024c3548be5f50d7fc0679664a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value that represents the CTRL key.  <a href="main_8c.html#a6ad38d024c3548be5f50d7fc0679664a">More...</a><br /></td></tr>
 <tr class="separator:a6ad38d024c3548be5f50d7fc0679664a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41d38be2dd6c639630df2217efcdb5c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a41d38be2dd6c639630df2217efcdb5c2">NOODLE_VERSION</a>&#160;&#160;&#160;&quot;0.0.1&quot;</td></tr>
 <tr class="separator:a41d38be2dd6c639630df2217efcdb5c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a338375e0d9379e2c297acac89c4049e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a338375e0d9379e2c297acac89c4049e7">ABUF_INIT</a></td></tr>
-<tr class="separator:a338375e0d9379e2c297acac89c4049e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -146,8 +151,15 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="separator:afc98e1836253d54640dce00e325aa284"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">editorRow : a row of text</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpb66d48d7b83734a0cfeff6e27175af58"></a>Contains the stored text and its size </p>
+</td></tr>
+<tr class="memitem:a338375e0d9379e2c297acac89c4049e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a338375e0d9379e2c297acac89c4049e7">ABUF_INIT</a>&#160;&#160;&#160;{NULL, 0}</td></tr>
+<tr class="separator:a338375e0d9379e2c297acac89c4049e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a765f8cddf51602819c46ec01a4b5a963"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structerow.html">erow</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a765f8cddf51602819c46ec01a4b5a963">erow</a></td></tr>
+<tr class="separator:a765f8cddf51602819c46ec01a4b5a963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2102c449d589a72385cc03ed8906854f"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structeditorConfig.html">editorConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a2102c449d589a72385cc03ed8906854f">E</a></td></tr>
+<tr class="separator:a2102c449d589a72385cc03ed8906854f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a54f17884b9d094426279cc76bc67a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a9a54f17884b9d094426279cc76bc67a5">kill</a> (const char *s)</td></tr>
 <tr class="memdesc:a9a54f17884b9d094426279cc76bc67a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">=die. Error handling function using unistd.h  <a href="main_8c.html#a9a54f17884b9d094426279cc76bc67a5">More...</a><br /></td></tr>
 <tr class="separator:a9a54f17884b9d094426279cc76bc67a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,6 +175,10 @@ Functions</h2></td></tr>
 <tr class="separator:a485c870734764c8e5acce9e16e4d70ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb7a921b1f250259a639fe7b24166021"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aeb7a921b1f250259a639fe7b24166021">getWindowSize</a> (int *rows, int *cols)</td></tr>
 <tr class="separator:aeb7a921b1f250259a639fe7b24166021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bb428088d219a2ee22a81ed36f85faa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a0bb428088d219a2ee22a81ed36f85faa">editorAppendRow</a> (char *s, size_t len)</td></tr>
+<tr class="separator:a0bb428088d219a2ee22a81ed36f85faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7e9106f11ecfa36e5695996c1f6e316"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ac7e9106f11ecfa36e5695996c1f6e316">editorOpen</a> (char *filename)</td></tr>
+<tr class="separator:ac7e9106f11ecfa36e5695996c1f6e316"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dd3715258f4c42aeb40ae92f51422e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a9dd3715258f4c42aeb40ae92f51422e9">abAppend</a> (struct <a class="el" href="structabuf.html">abuf</a> *ab, const char *s, int len)</td></tr>
 <tr class="separator:a9dd3715258f4c42aeb40ae92f51422e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa676d43ad5c715bcf8ec2c3b2df0f4e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aa676d43ad5c715bcf8ec2c3b2df0f4e0">abFree</a> (struct <a class="el" href="structabuf.html">abuf</a> *ab)</td></tr>
@@ -184,13 +200,50 @@ Functions</h2></td></tr>
 <tr class="separator:a5593979af366e0639f9179bcb304470a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a2102c449d589a72385cc03ed8906854f"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structeditorConfig.html">editorConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a2102c449d589a72385cc03ed8906854f">E</a></td></tr>
-<tr class="separator:a2102c449d589a72385cc03ed8906854f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ad3d8a3bd0c0b677acef144f2c2ef6d73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3d8a3bd0c0b677acef144f2c2ef6d73">&#9670;&nbsp;</a></span>_BSD_SOURCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _BSD_SOURCE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8fb447618db946a9e2a596d9ea18763f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fb447618db946a9e2a596d9ea18763f">&#9670;&nbsp;</a></span>_DEFAULT_SOURCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _DEFAULT_SOURCE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a369266c24eacffb87046522897a570d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a369266c24eacffb87046522897a570d5">&#9670;&nbsp;</a></span>_GNU_SOURCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _GNU_SOURCE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a338375e0d9379e2c297acac89c4049e7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a338375e0d9379e2c297acac89c4049e7">&#9670;&nbsp;</a></span>ABUF_INIT</h2>
 
@@ -198,14 +251,11 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ABUF_INIT</td>
+          <td class="memname">#define ABUF_INIT&#160;&#160;&#160;{NULL, 0}</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    {             \</div>
-<div class="line">        NULL, 0   \</div>
-<div class="line">    }</div>
-</div><!-- fragment --><p>Represents an empty buffer, used as a constructor for the abuf type struct </p>
+<p>Represents an empty buffer, used as a constructor for the abuf type struct </p>
 
 </div>
 </div>
@@ -237,6 +287,21 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define NOODLE_VERSION&#160;&#160;&#160;&quot;0.0.1&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a765f8cddf51602819c46ec01a4b5a963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a765f8cddf51602819c46ec01a4b5a963">&#9670;&nbsp;</a></span>erow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structerow.html">erow</a> <a class="el" href="structerow.html">erow</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -351,6 +416,34 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a0bb428088d219a2ee22a81ed36f85faa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bb428088d219a2ee22a81ed36f85faa">&#9670;&nbsp;</a></span>editorAppendRow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void editorAppendRow </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a6236022e462c2ceeed7163aac57751e1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6236022e462c2ceeed7163aac57751e1">&#9670;&nbsp;</a></span>editorDrawRows()</h2>
 
@@ -395,6 +488,24 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ac7e9106f11ecfa36e5695996c1f6e316"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7e9106f11ecfa36e5695996c1f6e316">&#9670;&nbsp;</a></span>editorOpen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void editorOpen </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

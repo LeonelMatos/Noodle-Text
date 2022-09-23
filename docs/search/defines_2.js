@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['noodle_5fversion_90',['NOODLE_VERSION',['../main_8c.html#a41d38be2dd6c639630df2217efcdb5c2',1,'main.c']]]
+  ['ctrl_5fkey_110',['CTRL_KEY',['../main_8c.html#a6ad38d024c3548be5f50d7fc0679664a',1,'main.c']]]
 ];
