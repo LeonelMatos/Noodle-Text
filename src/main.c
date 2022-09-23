@@ -1,9 +1,15 @@
-/*---INCLUDE---*/
+/*--- INCLUDE ---*/
+
+#define _DEFAULT_SOURCE
+#define _BSD_SOURCE
+#define _GNU_SOURCE
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
+#include <sys/types.h>
 #include <termios.h>
 #include <unistd.h>
 #include <ctype.h>
@@ -11,7 +17,7 @@
 
 #include "args.h"
 
-/*---DEFINES---*/
+/*--- DEFINES ---*/
 
 /// Value that represents the CTRL key
 #define CTRL_KEY(k) ((k)&0x1f)
@@ -31,7 +37,14 @@ enum editorKey
     PAGE_DOWN
 };
 
-/*---DATA---*/
+/*--- DATA ---*/
+
+/// @brief \name editorRow : a row of text
+/// Contains the stored text and its size
+typedef struct erow {
+    int size;
+    char *chars;
+} erow;
 
 struct editorConfig
 {
@@ -39,7 +52,9 @@ struct editorConfig
     int cx, cy;
     int screenrows;
     int screencols;
-    // Placeholder for the terminal's default settings
+    int numrows;
+    erow *row;
+    /// Placeholder for the terminal's default settings
     struct termios orig_termios;
 };
 
@@ -55,7 +70,7 @@ void kill(const char *s)
     exit(1);
 }
 
-/*---TERMINAL OPTIONS---*/
+/*--- TERMINAL OPTIONS ---*/
 /// Resets the terminal's attributes with orig_termios
 void disableRawMode()
 {
@@ -201,7 +216,46 @@ int getWindowSize(int *rows, int *cols)
     }
 }
 
-/*---APPEND_BUFFER---*/
+/*--- ROW_OPERATIONS ---*/
+
+void editorAppendRow(char *s, size_t len)
+ {
+    E.row = realloc(E.row, sizeof(erow) * (E.numrows + 1));
+
+    int at = E.numrows;
+
+    E.row[at].size = len;
+    E.row[at].chars = malloc(len + 1);
+    memcpy(E.row[at].chars, s, len);
+    E.row[at].chars[len] = '\0';
+    E.numrows++;
+ }
+
+
+/*--- FILE_I/O ---*/
+
+void editorOpen(char *filename)
+{
+    FILE *fp = fopen(filename, "r");
+    if (!fp) kill("fopen");
+
+    char *line = NULL;
+    size_t linecap = 0;
+    ssize_t linelen;
+
+    while ((linelen = getline(&line, &linecap, fp)) != -1) {
+        while (linelen > 0 && (line[linelen-1] == '\n' || line[linelen-1] == '\r'))
+            linelen--;
+        
+        editorAppendRow(line, linelen);
+    }
+    
+    free(line);
+    fclose(fp);
+
+}
+
+/*--- APPEND_BUFFER ---*/
 
 // Definitions
 /// Append buffer: dynamic string type struct.
@@ -239,7 +293,7 @@ void abFree(struct abuf *ab)
     free(ab->b);
 }
 
-/*---OUTPUT---*/
+/*--- OUTPUT ---*/
 
 /// Draws the rows on the side of the editor
 void editorDrawRows(struct abuf *ab)
@@ -248,30 +302,36 @@ void editorDrawRows(struct abuf *ab)
     int y;
     for (y = 0; y < E.screenrows; y++)
     {
-        if (y == E.screenrows / E.screenrows)
-        {
-            char welcome[80];
-            int welcome_len = snprintf(welcome, sizeof(welcome),
-                                       "<< NoodleText || version %s >>", NOODLE_VERSION);
+        if (y >= E.numrows) {
+            if (E.numrows == 0 && y == E.screenrows / 3)
+            {
+                char welcome[80];
+                int welcome_len = snprintf(welcome, sizeof(welcome),
+                "<< NoodleText || version %s FILE: %d>>", NOODLE_VERSION, E.numrows);
 
-            if (welcome_len > E.screencols)
-                welcome_len = E.screencols;
+                if (welcome_len > E.screencols)
+                    welcome_len = E.screencols;
 
-            int padding = (E.screencols - welcome_len) / 2;
+                int padding = (E.screencols - welcome_len) / 2;
 
-            if (padding)
+                if (padding)
+                {
+                    abAppend(ab, "*", 1);
+                    padding--;
+                }
+                while (padding--)
+                    abAppend(ab, " ", 1);
+
+                abAppend(ab, welcome, welcome_len);
+            }
+            else
             {
                 abAppend(ab, "*", 1);
-                padding--;
             }
-            while (padding--)
-                abAppend(ab, " ", 1);
-
-            abAppend(ab, welcome, welcome_len);
-        }
-        else
-        {
-            abAppend(ab, "*", 1);
+        } else {
+            int len = E.row[y].size;
+            if (len > E.screencols) len = E.screencols;
+            abAppend(ab, E.row[y].chars, len);
         }
 
         // abAppend(ab, "*", 1);
@@ -306,7 +366,7 @@ void editorRefreshScreen()
     abFree(&ab); // After writing, frees the allocated memory
 }
 
-/*---INPUT---*/
+/*--- INPUT ---*/
 
 /// @brief Receives the given WASD keys and moves the cursor accordingly
 /// @param key Relates the key with WASD to move the cursor
@@ -374,13 +434,15 @@ void editorProcessKeypress()
     }
 }
 
-/*---INIT---*/
+/*--- INIT ---*/
 
 /// Initialize all the fields in the E struct after enabling raw mode in the editor
 void initEditor()
 {
     E.cx = 0;
     E.cy = 0;
+    E.numrows = 0;
+    E.row = NULL;
 
     if (getWindowSize(&E.screenrows, &E.screencols) == -1)
         kill("getWindowSize");
@@ -391,14 +453,19 @@ void initEditor()
 int main(int argc, char *argv[])
 {
     // Check arguments for extra options
-    if (argc != 1)
+    if (argc >= 2)
     {
-        if (args_check(argv[1]) == -1)
-            return 0;
+        if (argv[1][0] == '-') {
+            if (args_check(argv[1]) == -1) return 0;
+        }
+        
     }
 
     enableRawMode();
     initEditor();
+
+    if (argc >= 2 && argv[1][0] != '-')
+        editorOpen(argv[1]);
 
     while (1)
     {
