@@ -50,6 +50,8 @@ struct editorConfig
 {
     /// cx, cy: current position of the cursor
     int cx, cy;
+    /// Row of the file the user scrolled to
+    int rowoff;
     int screenrows;
     int screencols;
     int numrows;
@@ -295,6 +297,18 @@ void abFree(struct abuf *ab)
 
 /*--- OUTPUT ---*/
 
+
+/// Check if the cursor moved outside the editor window
+void editorScroll() 
+{
+    if (E.cy < E.rowoff) {
+        E.rowoff = E.cy;
+    }
+    if (E.cy >= E.rowoff + E.screenrows) {
+        E.rowoff = E.cy - E.screencols + 1;
+    }
+}
+
 /// Draws the rows on the side of the editor
 void editorDrawRows(struct abuf *ab)
 {
@@ -302,7 +316,9 @@ void editorDrawRows(struct abuf *ab)
     int y;
     for (y = 0; y < E.screenrows; y++)
     {
-        if (y >= E.numrows) {
+        int filerow = y + E.rowoff;
+
+        if (filerow >= E.numrows) {
             if (E.numrows == 0 && y == E.screenrows / 3)
             {
                 char welcome[80];
@@ -329,9 +345,9 @@ void editorDrawRows(struct abuf *ab)
                 abAppend(ab, "*", 1);
             }
         } else {
-            int len = E.row[y].size;
+            int len = E.row[filerow].size;
             if (len > E.screencols) len = E.screencols;
-            abAppend(ab, E.row[y].chars, len);
+            abAppend(ab, E.row[filerow].chars, len);
         }
 
         // abAppend(ab, "*", 1);
@@ -441,6 +457,7 @@ void initEditor()
 {
     E.cx = 0;
     E.cy = 0;
+    E.rowoff = 0;
     E.numrows = 0;
     E.row = NULL;
 
