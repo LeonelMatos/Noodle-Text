@@ -305,7 +305,7 @@ void editorScroll()
         E.rowoff = E.cy;
     }
     if (E.cy >= E.rowoff + E.screenrows) {
-        E.rowoff = E.cy - E.screencols + 1;
+        E.rowoff = E.cy - E.screenrows + 1;
     }
 }
 
@@ -362,6 +362,8 @@ void editorDrawRows(struct abuf *ab)
 /// Clears the screen of the editor
 void editorRefreshScreen()
 {
+    editorScroll();
+
     struct abuf ab = ABUF_INIT; // Creates the abuf buffer with INIT
     // Instead of always using write(STDOUT_FILENO,...), the abAppend(...) will
     // gather the text and write it all at once
@@ -372,7 +374,7 @@ void editorRefreshScreen()
     editorDrawRows(&ab);
 
     char buf[32];
-    snprintf(buf, sizeof(buf), "\x1b[%d;%dH", E.cy + 1, E.cx + 1);
+    snprintf(buf, sizeof(buf), "\x1b[%d;%dH", (E.cy - E.rowoff), E.cx + 1);
     abAppend(&ab, buf, strlen(buf));
 
     abAppend(&ab, "\x1b[?25h", 6);
@@ -403,7 +405,7 @@ void editorMoveCursor(int key)
             E.cy--;
         break;
     case ARROW_DOWN:
-        if (E.cy != E.screenrows - 1)
+        if (E.cy < E.numrows)
             E.cy++;
         break;
     }
