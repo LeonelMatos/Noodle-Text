@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['disablerawmode_69',['disableRawMode',['../main_8c.html#a511a801a5c76fb4cb8d534e810a2e37a',1,'main.c']]]
+  ['disablerawmode_72',['disableRawMode',['../main_8c.html#a511a801a5c76fb4cb8d534e810a2e37a',1,'main.c']]]
 ];

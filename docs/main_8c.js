@@ -31,6 +31,7 @@ var main_8c =
     [ "editorProcessKeypress", "main_8c.html#a43bfd581a44ca5cb90567f87fd54c2e6", null ],
     [ "editorReadKey", "main_8c.html#a3191f441b5b09dac7397bb81c0cc885b", null ],
     [ "editorRefreshScreen", "main_8c.html#a1832f97a88d836b0bfc067a06c6ef61a", null ],
+    [ "editorScroll", "main_8c.html#afa86cb223c41f6d11aec3e1fbd35d988", null ],
     [ "enableRawMode", "main_8c.html#a7fecbf2dbe580e26a76bde506afe5555", null ],
     [ "getCursorPosition", "main_8c.html#a485c870734764c8e5acce9e16e4d70ac", null ],
     [ "getWindowSize", "main_8c.html#aeb7a921b1f250259a639fe7b24166021", null ],
