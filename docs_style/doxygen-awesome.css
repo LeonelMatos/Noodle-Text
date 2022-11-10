@@ -64,10 +64,10 @@ html {
     --font-family-monospace: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
 
     /* font sizes */
-    --page-font-size: 15.6px;
-    --navigation-font-size: 14.4px;
-    --code-font-size: 14px; /* affects code, fragment */
-    --title-font-size: 22px;
+    --page-font-size: 22.0px;
+    --navigation-font-size: 18.0px;
+    --code-font-size: 20px; /* affects code, fragment */
+    --title-font-size: 40px;
 
     /* content text properties. These only affect the page content, not the navigation or any other ui elements */
     --content-line-height: 27px;

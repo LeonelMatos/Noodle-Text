@@ -1,6 +1,6 @@
 \mainpage NoodleText
 
-## \emoji :ramen:
+\emoji :ramen: \emoji :ramen: \emoji :ramen:
 
 # NoodleText: The Documentation
 

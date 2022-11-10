@@ -102,6 +102,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3a574c0b302bc1826307c43a53635214"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="args_8h.html#a3a574c0b302bc1826307c43a53635214">args_check</a> (char *arg)</td></tr>
+<tr class="memdesc:a3a574c0b302bc1826307c43a53635214"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check for additional parameters when execution the editor.  <a href="args_8h.html#a3a574c0b302bc1826307c43a53635214">More...</a><br /></td></tr>
 <tr class="separator:a3a574c0b302bc1826307c43a53635214"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -120,10 +121,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Used when given additional parameters on execution of the program. Verifies the argument and runs accordingly. </p><ul>
-<li><code>char</code> * arg <dl class="section return"><dt>Returns</dt><dd>-1 to end the program </dd></dl>
-</li>
-</ul>
+
+<p>Check for additional parameters when execution the editor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg</td><td>Argument added as input from execution of the editor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>-1 Invalid Input </dd>
+<dd>
+0 Return a confirmation of the arg </dd></dl>
 
 </div>
 </div>

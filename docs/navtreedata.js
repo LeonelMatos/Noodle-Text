@@ -25,16 +25,21 @@
 var NAVTREE =
 [
   [ "NoodleText", "index.html", [
-    [ "NoodleText: The Documentation", "index.html#autotoc_md1", [
-      [ "\\emoji :ramen:", "index.html#autotoc_md0", null ],
-      [ "Noodle", "index.html#autotoc_md2", null ],
-      [ "Motivation", "index.html#autotoc_md3", null ]
+    [ "NoodleText: The Documentation", "index.html#autotoc_md0", [
+      [ "Noodle", "index.html#autotoc_md1", null ],
+      [ "Motivation", "index.html#autotoc_md2", null ]
     ] ],
-    [ "Links", "index.html#autotoc_md4", [
-      [ "Author", "index.html#autotoc_md5", null ]
+    [ "Links", "index.html#autotoc_md3", [
+      [ "Author", "index.html#autotoc_md4", null ]
     ] ],
     [ "- Makefile", "makefile.html", [
-      [ "Makefile Guide", "makefile.html#autotoc_md6", null ]
+      [ "Makefile Guide", "makefile.html#autotoc_md5", null ],
+      [ "How to Run", "makefile.html#autotoc_md6", null ],
+      [ "List of Commands", "makefile.html#autotoc_md7", [
+        [ "Example", "makefile.html#autotoc_md8", null ]
+      ] ],
+      [ "Make Help", "makefile.html#autotoc_md9", null ],
+      [ "Variables", "makefile.html#autotoc_md10", null ]
     ] ],
     [ "- TODO", "todo.html", null ],
     [ "Data Structures", "annotated.html", [

@@ -36,8 +36,8 @@ build : noodle
 
 help : 
 	@echo "\n\033[1m"NoodleText Makefile Helper"\033[0m\n"
-	@echo "\tmake [OPTION]"
-	@echo "\n\033[1m"Options:"\033[0m\n"
+	@echo "\tmake [COMMAND]"
+	@echo "\n\033[1m"Commands:"\033[0m\n"
 	@echo "\t'run'     : compiles and executes the program;"
 	@echo "\t'rm'      : removes the compiled program;"
 	@echo "\t'clean'   : clears any auxiliary file such as .out or .txt;"

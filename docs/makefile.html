@@ -91,8 +91,58 @@ $(document).ready(function(){initNavTree('makefile.html',''); initResizable(); }
 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md6"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md5"></a>
 Makefile Guide</h1>
+<h1><a class="anchor" id="autotoc_md6"></a>
+How to Run</h1>
+<pre class="fragment">make
+</pre><p> or </p><pre class="fragment">make [COMMAND]
+</pre> <h1><a class="anchor" id="autotoc_md7"></a>
+List of Commands</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Commands   </th><th class="markdownTableHeadLeft">Summary    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">NULL   </td><td class="markdownTableBodyLeft">compiles on src/.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">run   </td><td class="markdownTableBodyLeft">compiles and run    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">rm   </td><td class="markdownTableBodyLeft">removes build    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">clean   </td><td class="markdownTableBodyLeft">removes .out/.txt files    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">profile   </td><td class="markdownTableBodyLeft">profiling code run    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">build   </td><td class="markdownTableBodyLeft">builds on /usr/bin    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">help   </td><td class="markdownTableBodyLeft">show options   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Example</h2>
+<pre class="fragment">make run
+</pre> <hr  />
+<h1><a class="anchor" id="autotoc_md9"></a>
+Make Help</h1>
+<blockquote class="doxtable">
+<p>NoodleText Makefile Helper</p>
+<p>make [OPTION]</p>
+<p>Options:</p>
+<p>'run' : compiles and executes the program; 'rm' : removes the compiled program; 'clean' : clears any auxiliary file such as .out or .txt; 'profile' : creates a .txt output file with results from profiling the program; 'build' : compile and install the program; 'help' : I'll leave you at that one. </p>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md10"></a>
+Variables</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Variables   </th><th class="markdownTableHeadCenter">Value   </th><th class="markdownTableHeadLeft">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">CC   </td><td class="markdownTableBodyCenter">gcc   </td><td class="markdownTableBodyLeft">C project compiler    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">OUTPUT   </td><td class="markdownTableBodyCenter">profile_output.txt   </td><td class="markdownTableBodyLeft">Profiler text output    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">SOURCEFILES   </td><td class="markdownTableBodyCenter">$(wildcard *.c)   </td><td class="markdownTableBodyLeft">Additional code files (ex:<a class="el" href="args_8c.html">args.c</a>)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">OBJECTS   </td><td class="markdownTableBodyCenter">$(SOURCEFILES:%.c=%.o)   </td><td class="markdownTableBodyLeft">Compiled SOURCEFILES   </td></tr>
+</table>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
