@@ -349,6 +349,7 @@ void editorDrawRows(struct abuf *ab)
                     abAppend(ab, " ", 1);
 
                 abAppend(ab, welcome, welcome_len);
+
             }
             else
             {

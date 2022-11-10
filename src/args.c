@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-///Used when given additional parameters on execution
-///of the program. Verifies the argument and runs
-/// accordingly. \arg \c char * arg
-///\return -1 to end the program
+/// @brief Check for additional parameters when execution the editor
+/// @param arg Argument added as input from execution of the editor
+/// @return -1 Invalid Input
+/// @return 0 Return a confirmation of the arg
 int args_check (char * arg) {
 
     switch (arg[1])
@@ -18,8 +18,10 @@ int args_check (char * arg) {
             printf("Author\n\tLeonel Matos <https://github.com/leonelmatos/noodletext/>\n\n");
             printf("Version\n\t23.09.22   version 0.0.1\n\n\n");
             return -1;
+        case 'c':
+            return 1; //Verification for the editor companion for cat.c
         default:
-            printf("\nInvalid input\n\n");
+            printf("\nInvalid Input of additional parameter\n\n");
             return -1;
     }
 }
