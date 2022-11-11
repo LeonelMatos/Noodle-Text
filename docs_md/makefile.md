@@ -37,10 +37,15 @@ help     | show options
 > Options:
 >
 >	'run'     : compiles and executes the program;
+>
 >	'rm'      : removes the compiled program;
+>
 >	'clean'   : clears any auxiliary file such as .out or .txt;
+>
 >	'profile' : creates a .txt output file with results from profiling the program;
+>
 >	'build'   : compile and install the program;
+>
 >	'help'    : I'll leave you at that one.
 
 # Variables
