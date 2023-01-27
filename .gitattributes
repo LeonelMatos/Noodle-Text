@@ -1,0 +1,4 @@
+# Ignored files by linguist-detectable for the repository language
+
+*.html linguist-detectable=false
+*.css  linguist-detectable=false
